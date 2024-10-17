@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Content Example</title>
+    <style>
+        .new-content {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Halaman Berita</h1>
+    <div id="content-area">
+        <!-- Konten yang ada di sini -->
+    </div>
+    <button id="add-content-button">Tambah Konten</button>
+
+    <script>
+        document.getElementById('add-content-button').addEventListener('click', function() {
+            let title = prompt("Masukkan Judul Berita:");
+            let description = prompt("Masukkan Deskripsi Berita:");
+
+            // Buat elemen baru
+            let newContent = document.createElement('div');
+            newContent.className = 'new-content';
+            newContent.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+
+            // Tambahkan ke content area
+            document.getElementById('content-area').appendChild(newContent);
+
+            // Simpan ke Local Storage
+            let contentList = JSON.parse(localStorage.getItem('contentList')) || [];
+            contentList.push({ title, description });
+            localStorage.setItem('contentList', JSON.stringify(contentList));
+        });
+
+        // Memuat konten dari Local Storage saat halaman dimuat
+        window.onload = function() {
+            let contentList = JSON.parse(localStorage.getItem('contentList')) || [];
+            contentList.forEach(content => {
+                let newContent = document.createElement('div');
+                newContent.className = 'new-content';
+                newContent.innerHTML = `<h3>${content.title}</h3><p>${content.description}</p>`;
+                document.getElementById('content-area').appendChild(newContent);
+            });
+        };
+    </script>
+</body>
+</html>

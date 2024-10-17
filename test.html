@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta, Title, CSS & Script -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisi Footer Atas</title>
+    
+    <style>
+        /* Footer yang berada di bagian atas */
+        footer {
+            background-color: #008f83; /* Warna latar belakang footer */
+            color: #fff; /* Warna teks putih */
+            padding: 20px; /* Jarak padding dalam footer */
+            text-align: center; /* Teks rata tengah */
+            position: fixed; /* Footer tetap di tempat saat halaman digulir */
+            top: 0; /* Posisi di bagian atas halaman */
+            left: 0;
+            width: 100%; /* Lebar footer memenuhi halaman */
+            z-index: 999; /* Pastikan selalu di atas elemen lain */
+        }
+
+        /* Styling untuk link di footer */
+        footer a {
+            color: #fff; /* Warna link */
+            text-decoration: none; /* Hilangkan garis bawah */
+            margin: 0 15px; /* Jarak antar link */
+            font-weight: bold; /* Tebalkan teks */
+        }
+
+        footer a:hover {
+            text-decoration: underline; /* Garis bawah saat hover */
+        }
+
+        /* Konten body diberikan padding agar tidak tertutup footer */
+        body {
+            margin: 0;
+            padding-top: 80px; /* Berikan jarak antara konten dan footer atas */
+            font-family: Arial, sans-serif; /* Font untuk seluruh body */
+        }
+
+        /* Styling untuk konten utama */
+        .content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Footer Atas -->
+<footer>
+    <div class="footer-links">
+        <a href="#about">Kasi Kurikulum & Penilaian SMA</a>
+        <a href="#services">Kasi Kelembagaan & Sarpras SMA</a>
+        <a href="#contact">Kasi Peserta Didik & Pembangunan Karakter SMA</a>
+    </div>
+</footer>
+
+<!-- Konten Utama -->
+<div class="content">
+    <h1>Konten Utama Halaman</h1>
+    <p>Ini adalah konten utama dari halaman web Anda. Konten ini akan memiliki jarak di atasnya agar tidak tertutupi oleh footer yang berada di atas.</p>
+</div>
+
+</body>
+</html>
